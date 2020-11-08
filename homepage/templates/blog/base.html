@@ -12,7 +12,7 @@
     <div class="page-header">
             {% if user.is_authenticated %}
                 <p class="top-menu" style="font-size:20px">
-                    Hello {{ user.username }}
+                    Hello {{ user.first_name }}
                     <a class="btn btn-info" href="{% url 'logout' %}">Log out</a>
                  </p>
                 <a href="{% url 'post_new' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Create Post">
