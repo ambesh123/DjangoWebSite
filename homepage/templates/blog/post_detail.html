@@ -2,6 +2,8 @@
 
 {% block content %}
 <div class="post">
+    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}" data-toggle="tooltip" data-placement="right" title="Edit">
+        <span class="glyphicon glyphicon-pencil"></span></a>
     <h2>{{ post.title }}</h2>
     {% if post.published_date %}
     <div class="date">
