@@ -120,3 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# When a user is authenticated we'll redirect to this url
+LOGIN_REDIRECT_URL = '/'

@@ -10,8 +10,19 @@
 </head>
     <body>
     <div class="page-header">
-        <a href="{% url 'post_new' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Create Post">
-            <span class="glyphicon glyphicon-plus"></span></a>
+            {% if user.is_authenticated %}
+                <p class="top-menu" style="font-size:20px">
+                    Hello {{ user.username }}
+                    <a class="btn btn-info" href="{% url 'logout' %}">Log out</a>
+                 </p>
+                <a href="{% url 'post_new' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Create Post">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Login">
+                    <span class="glyphicon glyphicon-lock"></span>
+                </a>
+            {% endif %}
         <h1><a href="/posts/">Ambesh's Blog</a></h1>
     </div>
     <div class="content container">
